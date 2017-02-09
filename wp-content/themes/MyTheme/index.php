@@ -95,7 +95,7 @@
 			</div>
 		</div>
 		<div class="massage_buttons">
-			<button class="price_button">Стоимость</button>
+			<a href="#s_price" class="price_button">Стоимость</a>
 			<button>Записаться</button>
 		</div>			
 	</div>
@@ -255,6 +255,23 @@
 		    </div>
 		</div>
 		<button>Оставить отзыв</button>
+		<div class="form_enroll mfp-hide" id="feedback_popup">
+				<form action="http://formspree.io/pantha_n@mail.ru" class="main_form" novalidate target="_blank" method="POST">
+					<label class="form_item">
+						Как Вас зовут:
+						<input type="text" name="name" placeholder="Ваше имя" />			
+					</label>
+					<label class="form_item">
+						Ваш E-mail:
+						<input type="email" name="email" placeholder="Ваш E-mail"/>			
+					</label>			
+					<label class="form_item">
+						Ваш отзыв:
+						<textarea name="message" placeholder="Ваше сообщение"></textarea>	
+					</label>			
+					<button class="feedback_send">Отправить</button>
+				</form>
+			</div>
 		<div  class="massage_details">
 			<p><a href="#">>>Узнать еще больше<<</a></p>
 		</div>		

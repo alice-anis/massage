@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/libs/bootstrap/bootstrap-grid.min.css" />
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/libs/font-awesome/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/libs/linea/styles.css" />
+	<link href="<?php echo get_template_directory_uri(); ?>/libs/formstyler/jquery.formstyler.css" rel="stylesheet" />
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/libs/magnific-popup/magnific-popup.css" />
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/libs/animate/animate.min.css" />
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/fonts.css" />
@@ -18,7 +19,8 @@
 	echo $options['selectinput']; ?>.css" />
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/media.css" />
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Oswald|PT+Sans|Roboto|Ubuntu" rel="stylesheet"> 
-	<script src="<?php echo get_template_directory_uri(); ?>/libs/jquery/jquery-2.1.3.min.js"></script>	
+	<script src="<?php echo get_template_directory_uri(); ?>/libs/jquery/jquery-2.1.3.min.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/libs/formstyler/jquery.formstyler.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/libs/waypoints/waypoints.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/libs/parallax/parallax.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/libs/scroll2id/PageScroll2id.min.js"></script>
@@ -91,6 +93,60 @@
 						<p><?php echo get_bloginfo('description'); ?></p>
 						<div class="header_buttons">
 							<button class="subscribe">Записаться на сеанс</button>
+							<div class="form_enroll mfp-hide" id="enroll_popup">
+								<form action="http://formspree.io/pantha_n@mail.ru" class="main_form" novalidate target="_blank" method="POST">
+									<label class="form_item">
+										<span class="color_element">*</span>Как Вас зовут:
+										<input type="text" name="name" placeholder="Ваше имя" data-validation-required-message="Вы не ввели имя" required />
+										<span class="help-block text-danger"></span>			
+									</label>
+									<label class="form_item">
+										Ваш E-mail:
+										<input type="email" name="email" placeholder="Ваш E-mail"/>				
+									</label>
+									<label class="form_item">
+										<span class="color_element">*</span>Номер телефона:
+										<input type="tel" name="tel" placeholder="Номер телефона" data-validation-required-message="Вы не ввели номер телефона" required />
+										<span class="help-block text-danger"></span>				
+									</label>
+									<label class="form_item">
+										Выберите вид массажа:
+										<p>
+											<select name="mas_kind">
+											<option value="Классический массаж всего тела">Классический массаж всего тела</option>
+											<option value="Традиционный тайский массаж">Традиционный тайский массаж</option>
+											</select>
+										</p>
+									</label>
+									<label class="form_item">
+										Выберите продолжительность сеанса:
+										<p>
+											<select name="mas_time">
+											<option value="1,5 часа">1,5 часа</option>
+											<option value="2 часа">2 часа</option>
+											<option value="2,5 часа">2,5 часа</option>
+											<option value="3 часа">3 часа</option>
+											</select>
+										</p>
+									</label>
+									<label class="form_item">
+										Выберите место:
+										<p>
+											<select name="mas_place">
+											<option value="Cтудия А">Cтудия А</option>
+											<option value="Студия Б">Студия Б</option>
+											<option value="Студия В">Студия В</option>
+											</select>
+										</p>
+									</label>
+									<label class="form_item">
+										Комментарий:
+										<textarea name="message" placeholder="Ваше сообщение"></textarea>				
+									</label>
+									<p><span class="color_element">*</span> - поля, обязательные для заполнения</p>
+									<button class="feedback_send">Отправить</button>
+								</form>
+							</div>
 							<!-- <button class="details">Подробнее</button> -->
 						</div>						
 					</div>					
